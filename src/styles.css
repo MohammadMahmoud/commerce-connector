@@ -1,10 +1,10 @@
 body {
-  @import url("http://fonts.googleapis.com/css?family=Raleway");
+  @import url("http://fonts.googleapis.com/css?family=Raleway+Montserrat");
   /** Remove Default Style **/
   /** Main Style **/
   /** MediaQueries **/ }
   body h1, body h2, body h3, body h4, body h5, body p, body a {
-    font-family: 'Raleway', sans-serif !important; }
+    font-family: 'Montserrat', sans-serif !important; }
   body agm-map {
     height: 95vh; }
   body ul {
@@ -19,22 +19,22 @@ body {
     position: absolute;
     z-index: 99; }
   body .map .btn-secondary {
-    background-color: black;
+    background-color: #30A5F0;
     color: white; }
   body .map .nav-item {
     width: 50%;
     font-weight: bold; }
     body .map .nav-item .nav-link {
-      color: black;
+      color: #30A5F0;
       border-radius: 0;
       font-size: 2vh;
       transition-duration: 1s; }
     body .map .nav-item .nav-link.active {
-      background-color: black;
+      background-color: #30A5F0;
       color: white; }
   body .map .badge-dark.listControl {
     color: white;
-    background-color: #343a40;
+    background-color: #30A5F0;
     width: 150px;
     height: 20px;
     line-height: 1.2;
@@ -45,7 +45,7 @@ body {
       color: white; }
   body .map .badge-dark.viewControl {
     color: white;
-    background-color: #343a40;
+    background-color: #30A5F0;
     width: 150px;
     height: 20px;
     line-height: 1.2;
@@ -69,7 +69,7 @@ body {
     right: 2%;
     height: 500px;
     background: white;
-    color: black;
+    color: #30A5F0;
     overflow: scroll;
     padding: 0 10px;
     overflow-x: hidden; }
@@ -78,16 +78,17 @@ body {
       font-size: 12px;
       white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis; }
+      text-overflow: ellipsis;
+      color: black; }
     body .map .stores .store {
-      border-bottom: 1px solid black; }
+      border-bottom: 1px solid #30A5F0; }
       body .map .stores .store:hover {
         background-color: #e0e0e0; }
     body .map .stores .location {
       cursor: pointer; }
     body .map .stores .badge-dark {
       color: white;
-      background-color: #343a40;
+      background-color: #30A5F0;
       width: 150px;
       height: 20px;
       line-height: 1.2; }
@@ -99,7 +100,7 @@ body {
     background-color: #eeeeee; }
   body .map #scrollbar-style::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: black; }
+    background-color: #30A5F0; }
   @media only screen and (min-device-width: 320px) and (max-device-width: 680px) {
     body body, body .map {
       overflow: hidden; }

@@ -1,9 +1,9 @@
 body {
-  @include google-font('Raleway');
+  @include google-font('Raleway+Montserrat');
 
   /** Remove Default Style **/
   h1, h2, h3, h4, h5, p, a {
-    font-family: 'Raleway', sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important;
   }
   agm-map {
     height: 95vh;
@@ -14,7 +14,7 @@ body {
     margin-bottom: 0;
   }
   a {
-    color: $main-color;
+    color: $font-color;
     text-decoration: none;
   }
 
@@ -45,7 +45,7 @@ body {
     }
     .badge-dark.listControl {
       color: $secondary-color;
-      background-color: #343a40;
+      background-color: $main-color;
       width: 150px;
       height: 20px;
       line-height: 1.2;
@@ -58,7 +58,7 @@ body {
     }
     .badge-dark.viewControl {
       color: $secondary-color;
-      background-color: #343a40;
+      background-color: $main-color;
       width: 150px;
       height: 20px;
       line-height: 1.2;
@@ -96,6 +96,7 @@ body {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        color: $font-color;
       }
       .store {
         border-bottom: 1px solid $main-color;
@@ -108,7 +109,7 @@ body {
       }
       .badge-dark {
         color: $secondary-color;
-        background-color: #343a40;
+        background-color: $main-color;
         width: 150px;
         height: 20px;
         line-height: 1.2;

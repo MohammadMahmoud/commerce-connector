@@ -6,10 +6,12 @@
             <ng-template ngbTabContent>
                 <div class="col-lg-6 searchInput">
                     <div class="input-group">
-                        <input type="text" class="form-control" (click)="cleanInput()" (keydown)="setFilteredItems()" [(ngModel)]="model"
+                        <input type="text" class="form-control" (click)="cleanInput()" (keydown)="setFilteredItems()"
+                               [(ngModel)]="model"
                                ngbTooltip="{{notFound}}" #tooltip="ngbTooltip" triggers="manual"/>
                         <span class="input-group-btn"><button class="btn btn-secondary" [disabled]="!searchEnabled"
-                                                              (click)="searchForThatCity()"><i class="fas fa-search"></i></button></span>
+                                                              (click)="searchForThatCity()"><i
+                                class="fas fa-search"></i></button></span>
                     </div>
                 </div>
                 <agm-map [latitude]='lat' [longitude]='lng' [zoom]="zoom" [usePanning]='true'>
@@ -30,8 +32,10 @@
 
         <!--Online Retailer Tab-->
         <ngb-tab title="{{'Online Retailer' |  uppercase}}">
-            <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee
-                squid.
+            <ng-template ngbTabContent>
+                <div class="container">
+                    <h5>Sorry, But No Stores Selling This Product Online</h5>
+                </div>
             </ng-template>
         </ngb-tab>
         <!--Online Retailer Tab-->
@@ -64,7 +68,7 @@
                     <p><i class="fas fa-clock"></i> : {{store.OpenHours ? store.OpenHours : 'unknown'}}</p>
                 </div>
                 <div class="col-6 text-center">
-                    <p> <b>{{store.name}}</b></p>
+                    <p><b>{{store.name}}</b></p>
                     <img src="http://via.placeholder.com/70x70" alt="logo">
                     <p class="location">Go To Location <i class="fas fa-compass"></i></p>
                 </div>
@@ -84,7 +88,7 @@
                     <p><i class="fas fa-clock"></i> : {{store.OpenHours ? store.OpenHours : 'unknown'}}</p>
                 </div>
                 <div class="col-6 text-center">
-                    <p> <b>{{store.name}}</b></p>
+                    <p><b>{{store.name}}</b></p>
                     <img src="http://via.placeholder.com/70x70" alt="logo">
                     <p class="location">Go To Location <i class="fas fa-compass"></i></p>
                 </div>
@@ -99,7 +103,8 @@
     <!--List Button Controller-->
 
     <!--View Button Controller-->
-    <a *ngIf="viewMode == 'single'" (click)="viewMode = 'list'" class="badge badge-dark viewControl">{{isActive ? 'Display All Stores' : ''}}</a>
+    <a *ngIf="viewMode == 'single'" (click)="viewMode = 'list'" class="badge badge-dark viewControl">{{isActive ?
+        'Display All Stores' : ''}}</a>
     <!--View Button Controller-->
 
 </div>
