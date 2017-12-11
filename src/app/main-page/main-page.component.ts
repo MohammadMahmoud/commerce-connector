@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {ProductApiService} from "../services/product-api.service";
-import {NgbTooltip, NgbTooltipConfig} from "@ng-bootstrap/ng-bootstrap";
+import {ProductApiService} from '../services/product-api.service';
+import {NgbTooltip, NgbTooltipConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-main-page',
@@ -52,10 +52,10 @@ export class MainPageComponent implements OnInit {
         this.singleLocation.push(markerObj);
         this.viewMode = 'single';
         this.isActive = true;
-        if( this.infoWindowOpened ===  infoWindow)
+        if (this.infoWindowOpened === infoWindow)
             return;
 
-        if(this.infoWindowOpened !== null)
+        if (this.infoWindowOpened !== null)
             this.infoWindowOpened.close();
 
         this.infoWindowOpened = infoWindow;
@@ -85,8 +85,8 @@ export class MainPageComponent implements OnInit {
     searchForThatCity() {
         this.api.getItemStores(this.model).subscribe(data => {
             if (this.historyKeywords.indexOf(this.model) === -1) {
-                if (data['getResult']["0"].ResultGroups["0"].LocalStores.length > 0) {
-                    this.results = data['getResult']["0"].ResultGroups["0"];
+                if (data['getResult']['0'].ResultGroups['0'].LocalStores.length > 0) {
+                    this.results = data['getResult']['0'].ResultGroups['0'];
                     this.lat = parseFloat(this.results.ResultGroupHeader.RequestGeoLocation.Lat);
                     this.lng = parseFloat(this.results.ResultGroupHeader.RequestGeoLocation.Lng);
                     this.zoom = 12;
@@ -111,10 +111,13 @@ export class MainPageComponent implements OnInit {
                     }
                 }
                 else {
-                    alert('Sorry , No Stores Selling This Product In This Area')
+                    alert('Sorry , No Stores Selling This Product In This Area');
                 }
             }
-        });
+        }), err => {
+            console.log('something error' + err);
+            alert('something error , check your internet' + err);
+        };
     }
 
     //When Clicked on Store From The List
@@ -122,7 +125,7 @@ export class MainPageComponent implements OnInit {
         this.lat = item.lat;
         this.lng = item.lng;
         this.zoom = 15;
-        this.markerClicked(item , null);
+        this.markerClicked(item, null);
     }
 
 
