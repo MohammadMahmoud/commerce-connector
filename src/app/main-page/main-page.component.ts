@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {ProductApiService} from '../services/product-api.service';
 import {NgbTooltip, NgbTooltipConfig} from '@ng-bootstrap/ng-bootstrap';
+import {NotificationsService} from "angular2-notifications";
 
 @Component({
     selector: 'app-main-page',
@@ -31,7 +32,7 @@ export class MainPageComponent implements OnInit {
     searchEnabled: boolean = false;
     cityAvailable: any = ['Munich', 'Stuttgart'];
 
-    constructor(public config: NgbTooltipConfig, public api: ProductApiService) {
+    constructor(public config: NgbTooltipConfig, public api: ProductApiService, private _service: NotificationsService) {
         config.placement = 'bottom';
     }
 
@@ -44,7 +45,7 @@ export class MainPageComponent implements OnInit {
     }
 
     //clean search
-    cleanInput(){
+    cleanInput() {
         this.model = '';
         this.isActive = false;
     }
@@ -76,8 +77,7 @@ export class MainPageComponent implements OnInit {
         this.searchEnabled = false;
         this.cities = found;
         this.model.length <= 1 ? this.cities = null : '';
-        this.model.length >= 2 && found.length == 0 ? this.notFound = 'Sorry The City Not Found' : this.notFound = '';
-        this.tooltip.open();
+        this.model.length >= 2 && found.length == 0 ? this._service.info('Sorry , no city found') : this.notFound = '';
     }
 
     //When City Selected
@@ -117,12 +117,12 @@ export class MainPageComponent implements OnInit {
                     }
                 }
                 else {
-                    alert('Sorry , No Stores Selling This Product In This Area');
+                    this._service.info('This city is not available');
                 }
             }
         }), err => {
-            console.log('something error' + err);
-            alert('something error , check your internet' + err);
+            this._service.info('Sorry , server is down');
+            console.log(err);
         };
     }
 

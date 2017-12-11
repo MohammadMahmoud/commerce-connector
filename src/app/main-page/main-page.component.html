@@ -102,6 +102,8 @@
         'Show List'}}</a>
     <!--List Button Controller-->
 
+    <simple-notifications></simple-notifications>
+
     <!--View Button Controller-->
     <a *ngIf="viewMode == 'single'" (click)="viewMode = 'list'" class="badge badge-dark viewControl">{{isActive ?
         'Display All Stores' : ''}}</a>
