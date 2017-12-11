@@ -96,7 +96,6 @@ body {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 350px;
       }
       .store {
         border-bottom: 1px solid $main-color;
@@ -130,17 +129,6 @@ body {
   }
 
   /** MediaQueries **/
-  @media only screen and (min-width : 480px) {
-    .stores {
-      top: 18% !important;
-      right: 0 !important;
-    }
-    .cities {
-      top: 16% !important;
-      left: 5% !important;
-      width: 70%;
-    }
-  }
   @media only screen and (min-device-width: 320px) and (max-device-width: 680px) {
     body, .map {
       overflow: hidden;
@@ -150,7 +138,7 @@ body {
       right: 0 !important;
     }
     .cities {
-      top: 24% !important;
+      top: 16% !important;
       left: 5% !important;
       width: 70%;
     }

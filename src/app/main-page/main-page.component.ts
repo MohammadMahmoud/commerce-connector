@@ -43,6 +43,12 @@ export class MainPageComponent implements OnInit {
         this.map = map;
     }
 
+    //clean search
+    cleanInput(){
+        this.model = '';
+        this.isActive = false;
+    }
+
     //When Marker Clicked
     markerClicked = (markerObj, infoWindow) => {
         this.lat = markerObj.lat;

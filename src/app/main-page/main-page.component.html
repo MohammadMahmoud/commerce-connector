@@ -6,7 +6,7 @@
             <ng-template ngbTabContent>
                 <div class="col-lg-6 searchInput">
                     <div class="input-group">
-                        <input type="text" class="form-control" (keydown)="setFilteredItems()" [(ngModel)]="model"
+                        <input type="text" class="form-control" (click)="cleanInput()" (keydown)="setFilteredItems()" [(ngModel)]="model"
                                ngbTooltip="{{notFound}}" #tooltip="ngbTooltip" triggers="manual"/>
                         <span class="input-group-btn"><button class="btn btn-secondary" [disabled]="!searchEnabled"
                                                               (click)="searchForThatCity()"><i class="fas fa-search"></i></button></span>
@@ -49,10 +49,10 @@
 
     <!--Search Stores-->
     <div *ngIf="isActive" [ngSwitch]="viewMode" [style.height]="viewMode == 'list' ? '500px' :  'auto' "
-         id="scrollbar-style" class="offset-md-8 col-lg-4 stores">
+         id="scrollbar-style" class="offset-md-8 col-lg-3 stores">
         <div *ngSwitchCase="'list'">
             <div class="row store" *ngFor="let store of locations" (click)="findStore(store)">
-                <div class="col-md-8">
+                <div class="col-6">
                     <p><i class="fas fa-phone"></i> : {{store.phone ? store.phone : 'unknown'}}</p>
                     <p><i class="fas fa-envelope-open"></i> : {{store.email ? store.email : 'unknown'}}</p>
                     <p><a href="{{store.website ? store.website : '#'}}"><i class="fas fa-at"></i> : {{store.website ?
@@ -63,7 +63,7 @@
                     <p><i class="fas fa-building"></i> : {{store.storeType ? store.storeType : 'unknown'}}</p>
                     <p><i class="fas fa-clock"></i> : {{store.OpenHours ? store.OpenHours : 'unknown'}}</p>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-6 text-center">
                     <p> <b>{{store.name}}</b></p>
                     <img src="http://via.placeholder.com/70x70" alt="logo">
                     <p class="location">Go To Location <i class="fas fa-compass"></i></p>
@@ -72,7 +72,7 @@
         </div>
         <div *ngSwitchCase="'single'">
             <div class="row store" *ngFor="let store of singleLocation" (click)="findStore(store)">
-                <div class="col-md-8">
+                <div class="col-6">
                     <p><i class="fas fa-phone"></i> : {{store.phone ? store.phone : 'unknown'}}</p>
                     <p><i class="fas fa-envelope-open"></i> : {{store.email ? store.email : 'unknown'}}</p>
                     <p><a href="{{store.website ? store.website : '#'}}"><i class="fas fa-at"></i> : {{store.website ?
@@ -83,7 +83,7 @@
                     <p><i class="fas fa-building"></i> : {{store.storeType ? store.storeType : 'unknown'}}</p>
                     <p><i class="fas fa-clock"></i> : {{store.OpenHours ? store.OpenHours : 'unknown'}}</p>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-6 text-center">
                     <p> <b>{{store.name}}</b></p>
                     <img src="http://via.placeholder.com/70x70" alt="logo">
                     <p class="location">Go To Location <i class="fas fa-compass"></i></p>
