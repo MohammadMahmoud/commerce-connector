@@ -79,7 +79,7 @@ body {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 330px; }
+      max-width: 350px; }
     body .map .stores .store {
       border-bottom: 1px solid black; }
       body .map .stores .store:hover {
@@ -101,12 +101,22 @@ body {
   body .map #scrollbar-style::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: black; }
-  @media only screen and (min-device-width: 320px) and (max-device-width: 680px) {
+  @media only screen and (min-width: 480px) {
     body .stores {
-      top: 15% !important;
+      top: 18% !important;
       right: 0 !important; }
     body .cities {
-      top: 13.5% !important;
+      top: 16% !important;
+      left: 5% !important;
+      width: 70%; } }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 680px) {
+    body body, body .map {
+      overflow: hidden; }
+    body .stores {
+      top: 18% !important;
+      right: 0 !important; }
+    body .cities {
+      top: 24% !important;
       left: 5% !important;
       width: 70%; }
     body .badge-dark.listControl {
