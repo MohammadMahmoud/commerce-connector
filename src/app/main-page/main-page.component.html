@@ -9,7 +9,7 @@
                         <input type="text" class="form-control" (keydown)="setFilteredItems()" [(ngModel)]="model"
                                ngbTooltip="{{notFound}}" #tooltip="ngbTooltip" triggers="manual"/>
                         <span class="input-group-btn"><button class="btn btn-secondary" [disabled]="!searchEnabled"
-                                                              (click)="searchForThatCity()">Search</button></span>
+                                                              (click)="searchForThatCity()"><i class="fas fa-search"></i></button></span>
                     </div>
                 </div>
                 <agm-map [latitude]='lat' [longitude]='lng' [zoom]="zoom" [usePanning]='true'>
@@ -17,7 +17,7 @@
                         <agm-marker *ngFor='let location of locations' [latitude]='location.lat'
                                     [longitude]='location.lng'
                                     (markerClick)='markerClicked(location , infoWindow)'>
-                            <agm-info-window #infoWindow >
+                            <agm-info-window #infoWindow>
                                 {{location.name}}
                             </agm-info-window>
                         </agm-marker>
@@ -94,11 +94,12 @@
     <!--Search Stores-->
 
     <!--List Button Controller-->
-    <a *ngIf="results" (click)="isActive = !isActive" class="badge badge-dark listControl">{{isActive ? 'Close List' : 'Display List'}}</a>
+    <a *ngIf="results" (click)="isActive = !isActive" class="badge badge-dark listControl">{{isActive ? 'Show Map' :
+        'Show List'}}</a>
     <!--List Button Controller-->
 
     <!--View Button Controller-->
-    <a *ngIf="viewMode == 'single'" (click)="viewMode = 'list'" class="badge badge-dark viewControl">{{isActive ? 'Display All' : ''}}</a>
+    <a *ngIf="viewMode == 'single'" (click)="viewMode = 'list'" class="badge badge-dark viewControl">{{isActive ? 'Display All Stores' : ''}}</a>
     <!--View Button Controller-->
 
 </div>
